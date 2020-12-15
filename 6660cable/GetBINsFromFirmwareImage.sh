@@ -24,9 +24,7 @@ apt-get -y install dialog 2> /dev/null
 
 menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version:" 22 76 16)
   options=(1 "7.23 Deustchland" on
-           2 "7.23 International" off
-           3 "..." off
-           4 "..." off)
+           2 "7.23 International" off)
   choices=$("${menu[@]}" "${options[@]}" 2>&1 >/dev/tty)
   clear
 
@@ -46,7 +44,6 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version:" 22
           echo ""
           echo "Installing some mandatory packages from the distro repository..."
           echo ""
-          apt-get -y update > /dev/null
           apt-get -y install wget tar git build-essential > /dev/null
 
           echo ""
@@ -169,14 +166,6 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version:" 22
           echo ""
           echo "/root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/"
           echo ""
-
-        ;;
-
-        3)
-
-        ;;
-
-        4)
 
         ;;
 
