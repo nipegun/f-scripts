@@ -186,12 +186,13 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware selection (S
 
     done
 
-echo "-----------------------------------------"
+echo ""
+echo "------------------------------------------"
 echo ""
 echo "Time expired. No selection has been made."
 echo ""
 echo "Re-run the script to try again"
 echo ""
-echo "-----------------------------------------"
+echo "------------------------------------------"
 echo ""
 
