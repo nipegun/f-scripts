@@ -179,13 +179,13 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware selection (S
           echo ""
 
           exit
-          
+
         ;;
 
       esac
 
     done
-    
+
 echo "-----------------------------------------"
 echo ""
 echo "Time expired. No selection has been made."
