@@ -49,16 +49,16 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version:" 22
           echo ""
           echo "Downloading the firmware update image file..."
           echo ""
-          mkdir -p /root/FritzBox/6660cable/firmware/7.23/Image/
-          cd /root/FritzBox/6660cable/firmware/7.23/Image/
+          mkdir -p /root/FritzBox/6660cable/firmware/7.23/Deustchland/Image/
+          cd /root/FritzBox/6660cable/firmware/7.23/Deustchland/Image/
           wget --no-check-certificate $URL723d$File723d
           
           echo ""
           echo "Extracting the image file..."
           echo ""
-          mkdir -p /root/FritzBox/6660cable/firmware/7.23/ImageExtracted/
-          cd /root/FritzBox/6660cable/firmware/7.23/ImageExtracted/
-          tar xf /root/FritzBox/6660cable/firmware/7.23/Image/$File723d
+          mkdir -p /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtracted/
+          cd /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtracted/
+          tar xf /root/FritzBox/6660cable/firmware/7.23/Deustchland/Image/$File723d
 
           echo ""
           echo "Downloading uimg-tool source code..."
@@ -77,25 +77,25 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version:" 22
           echo ""
           echo "Extracting .bin files from .uimg file..."
           echo ""
-          mkdir /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/
-          cd /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/
-          /root/SourceCode/uimg-tool/uimg -u -n part /root/FritzBox/6660cable/firmware/7.23/ImageExtracted/var/firmware-update.uimg > /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/Extraction.log
+          mkdir /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/
+          cd /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/
+          /root/SourceCode/uimg-tool/uimg -u -n part /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtracted/var/firmware-update.uimg > /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/Extraction.log
           echo ""
           echo "Result:"
           echo ""
-          cat /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/Extraction.log
+          cat /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/Extraction.log
           
           echo ""
           echo "Renaming .bin files for a better understanting of the flashing process..."
           echo ""
-          mv /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/part_03_ATOM_ROOTFS.bin /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/mtd0-Atom-RootFileSystem.bin
-          mv /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/part_02_ATOM_KERNEL.bin /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/mtd1-Atom-Kernel.bin
-          mv /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/part_09_ARM_ROOTFS.bin  /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/mtd6-ARM-RootFileSystem.bin
-          mv /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/part_08_ARM_KERNEL.bin  /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/mtd7-ARM-Kernel.bin
+          mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/part_03_ATOM_ROOTFS.bin /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd0-Atom-RootFileSystem.bin
+          mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/part_02_ATOM_KERNEL.bin /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd1-Atom-Kernel.bin
+          mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/part_09_ARM_ROOTFS.bin  /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd6-ARM-RootFileSystem.bin
+          mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/part_08_ARM_KERNEL.bin  /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd7-ARM-Kernel.bin
           echo ""
           echo "Process finished. All .bin files stored in:"
           echo ""
-          echo "/root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/"
+          echo "/root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/"
           echo ""
           
         ;;
@@ -112,22 +112,21 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version:" 22
           echo ""
           echo "Installing some mandatory packages from the distro repository..."
           echo ""
-          apt-get -y update > /dev/null
           apt-get -y install wget tar git build-essential > /dev/null
 
           echo ""
           echo "Downloading the firmware update image file..."
           echo ""
-          mkdir -p /root/FritzBox/6660cable/firmware/7.23/Image/
-          cd /root/FritzBox/6660cable/firmware/7.23/Image/
+          mkdir -p /root/FritzBox/6660cable/firmware/7.23/International/Image/
+          cd /root/FritzBox/6660cable/firmware/7.23/International/Image/
           wget --no-check-certificate $URL723i$File723i
           
           echo ""
           echo "Extracting the image file..."
           echo ""
-          mkdir -p /root/FritzBox/6660cable/firmware/7.23/ImageExtracted/
-          cd /root/FritzBox/6660cable/firmware/7.23/ImageExtracted/
-          tar xf /root/FritzBox/6660cable/firmware/7.23/Image/$File723i
+          mkdir -p /root/FritzBox/6660cable/firmware/7.23/International/ImageExtracted/
+          cd /root/FritzBox/6660cable/firmware/7.23/International/ImageExtracted/
+          tar xf /root/FritzBox/6660cable/firmware/7.23/International/Image/$File723i
 
           echo ""
           echo "Downloading uimg-tool source code..."
@@ -146,25 +145,25 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version:" 22
           echo ""
           echo "Extracting .bin files from .uimg file..."
           echo ""
-          mkdir /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/
-          cd /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/
-          /root/SourceCode/uimg-tool/uimg -u -n part /root/FritzBox/6660cable/firmware/7.23/ImageExtracted/var/firmware-update.uimg > /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/Extraction.log
+          mkdir /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/
+          cd /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/
+          /root/SourceCode/uimg-tool/uimg -u -n part /root/FritzBox/6660cable/firmware/7.23/International/ImageExtracted/var/firmware-update.uimg > /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/Extraction.log
           echo ""
           echo "Result:"
           echo ""
-          cat /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/Extraction.log
+          cat /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/Extraction.log
           
           echo ""
           echo "Renaming .bin files for a better understanting of the flashing process..."
           echo ""
-          mv /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/part_03_ATOM_ROOTFS.bin /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/mtd0-Atom-RootFileSystem.bin
-          mv /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/part_02_ATOM_KERNEL.bin /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/mtd1-Atom-Kernel.bin
-          mv /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/part_09_ARM_ROOTFS.bin  /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/mtd6-ARM-RootFileSystem.bin
-          mv /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/part_08_ARM_KERNEL.bin  /root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/mtd7-ARM-Kernel.bin
+          mv /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/part_03_ATOM_ROOTFS.bin /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/mtd0-Atom-RootFileSystem.bin
+          mv /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/part_02_ATOM_KERNEL.bin /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/mtd1-Atom-Kernel.bin
+          mv /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/part_09_ARM_ROOTFS.bin  /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/mtd6-ARM-RootFileSystem.bin
+          mv /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/part_08_ARM_KERNEL.bin  /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/mtd7-ARM-Kernel.bin
           echo ""
           echo "Process finished. All .bin files stored in:"
           echo ""
-          echo "/root/FritzBox/6660cable/firmware/7.23/ImageExtractedBINs/"
+          echo "/root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/"
           echo ""
 
         ;;
