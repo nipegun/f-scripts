@@ -22,8 +22,8 @@ ColorEnd='\033[0m'
 apt-get -y update > /dev/null
 apt-get -y install dialog > /dev/null
 
-menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version:" 22 76 16)
-  options=(1 "7.23 Deustchland" on
+menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version - SpaceBar to mark:" 22 76 16)
+  options=(1 "7.23 Deustchland" off
            2 "7.23 International" off)
   choices=$("${menu[@]}" "${options[@]}" 2>&1 >/dev/tty)
   clear
@@ -49,14 +49,14 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version:" 22
           echo ""
           echo "Downloading the firmware update image file..."
           echo ""
-          mkdir -p /root/FritzBox/6660cable/firmware/7.23/Deustchland/Image/
+          mkdir -p /root/FritzBox/6660cable/firmware/7.23/Deustchland/Image/ > /dev/null
           cd /root/FritzBox/6660cable/firmware/7.23/Deustchland/Image/
           wget --no-check-certificate $URL723d$File723d
           
           echo ""
           echo "Extracting the image file..."
           echo ""
-          mkdir -p /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtracted/
+          mkdir -p /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtracted/ > /dev/null
           cd /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtracted/
           tar xf /root/FritzBox/6660cable/firmware/7.23/Deustchland/Image/$File723d
 
@@ -64,7 +64,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version:" 22
           echo "Downloading uimg-tool source code..."
           echo ""
           rm -rf  /root/SourceCode/uimg-tool/ > /dev/null
-          mkdir   /root/SourceCode/
+          mkdir   /root/SourceCode/ > /dev/null
           cd      /root/SourceCode/
           git clone --depth=1 http://bitbucket.org/fesc2000/uimg-tool/
 
@@ -77,7 +77,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version:" 22
           echo ""
           echo "Extracting .bin files from .uimg file..."
           echo ""
-          mkdir /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/
+          mkdir /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/ > /dev/null
           cd /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/
           /root/SourceCode/uimg-tool/uimg -u -n part /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtracted/var/firmware-update.uimg > /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/Extraction.log
           echo ""
@@ -93,9 +93,10 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version:" 22
           mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/part_09_ARM_ROOTFS.bin  /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd6-ARM-RootFileSystem.bin
           mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/part_08_ARM_KERNEL.bin  /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd7-ARM-Kernel.bin
           echo ""
-          echo "Process finished. All .bin files stored in:"
           echo ""
+          echo "Process finished. All .bin files stored in:"
           echo "/root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/"
+          echo ""
           echo ""
           
         ;;
@@ -117,14 +118,14 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version:" 22
           echo ""
           echo "Downloading the firmware update image file..."
           echo ""
-          mkdir -p /root/FritzBox/6660cable/firmware/7.23/International/Image/
+          mkdir -p /root/FritzBox/6660cable/firmware/7.23/International/Image/ > /dev/null
           cd /root/FritzBox/6660cable/firmware/7.23/International/Image/
           wget --no-check-certificate $URL723i$File723i
           
           echo ""
           echo "Extracting the image file..."
           echo ""
-          mkdir -p /root/FritzBox/6660cable/firmware/7.23/International/ImageExtracted/
+          mkdir -p /root/FritzBox/6660cable/firmware/7.23/International/ImageExtracted/ > /dev/null
           cd /root/FritzBox/6660cable/firmware/7.23/International/ImageExtracted/
           tar xf /root/FritzBox/6660cable/firmware/7.23/International/Image/$File723i
 
@@ -132,7 +133,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version:" 22
           echo "Downloading uimg-tool source code..."
           echo ""
           rm -rf  /root/SourceCode/uimg-tool/ > /dev/null
-          mkdir   /root/SourceCode/
+          mkdir   /root/SourceCode/ > /dev/null
           cd      /root/SourceCode/
           git clone --depth=1 http://bitbucket.org/fesc2000/uimg-tool/
 
@@ -145,7 +146,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version:" 22
           echo ""
           echo "Extracting .bin files from .uimg file..."
           echo ""
-          mkdir /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/
+          mkdir /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/ > /dev/null
           cd /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/
           /root/SourceCode/uimg-tool/uimg -u -n part /root/FritzBox/6660cable/firmware/7.23/International/ImageExtracted/var/firmware-update.uimg > /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/Extraction.log
           echo ""
@@ -161,9 +162,10 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version:" 22
           mv /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/part_09_ARM_ROOTFS.bin  /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/mtd6-ARM-RootFileSystem.bin
           mv /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/part_08_ARM_KERNEL.bin  /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/mtd7-ARM-Kernel.bin
           echo ""
-          echo "Process finished. All .bin files stored in:"
           echo ""
+          echo "Process finished. All .bin files stored in:"
           echo "/root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/"
+          echo ""
           echo ""
 
         ;;
