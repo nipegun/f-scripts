@@ -102,6 +102,9 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware selection (S
           ls -al --color | grep .bin |  sed 's/.* //'
           echo "--------------------------------------------------------------------------"
           echo ""
+
+          exit
+
         ;;
 
         2)
@@ -175,9 +178,20 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware selection (S
           echo "--------------------------------------------------------------------------"
           echo ""
 
+          exit
+          
         ;;
 
       esac
 
     done
+    
+echo "-----------------------------------------"
+echo ""
+echo "Time expired. No selection has been made."
+echo ""
+echo "Re-run the script to try again"
+echo ""
+echo "-----------------------------------------"
+echo ""
 
