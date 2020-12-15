@@ -22,12 +22,12 @@ ColorEnd='\033[0m'
 apt-get -y update 2> /dev/null
 apt-get -y install dialog 2> /dev/null
 
-menu=(dialog --timeout 5 --checklist "Firmware version:" 22 76 16)
-  opciones=(1 "7.23 Deustchland" on
-            2 "7.23 International" off
-            3 "..." off
-            4 "..." off)
-  choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
+menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version:" 22 76 16)
+  options=(1 "7.23 Deustchland" on
+           2 "7.23 International" off
+           3 "..." off
+           4 "..." off)
+  choices=$("${menu[@]}" "${options[@]}" 2>&1 >/dev/tty)
   clear
 
   for choice in $choices
