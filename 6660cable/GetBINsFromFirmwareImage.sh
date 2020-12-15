@@ -99,7 +99,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version - Sp
           echo "/root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/"
           cd /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/
           echo ""
-          ls -al --color | grep .bin
+          ls -al --color | grep .bin |  sed 's/.* //'
           echo ""
         ;;
 
@@ -170,7 +170,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version - Sp
           echo "/root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/"
           cd /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/
           echo ""
-          ls -al --color | grep .bin
+          ls -al --color | grep .bin |  sed 's/.* //'
           echo ""
 
         ;;
