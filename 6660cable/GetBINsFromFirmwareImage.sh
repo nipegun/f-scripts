@@ -179,5 +179,5 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware selection (S
 
       esac
 
-done
+    done
 
