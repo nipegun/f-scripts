@@ -22,7 +22,7 @@ ColorEnd='\033[0m'
 apt-get -y update > /dev/null
 apt-get -y install dialog > /dev/null
 
-menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version - SpaceBar to mark:" 22 76 16)
+menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version (SpaceBar to mark, Enter to proceed):" 22 76 16)
   options=(1 "7.23 Deustchland" off
            2 "7.23 International" off)
   choices=$("${menu[@]}" "${options[@]}" 2>&1 >/dev/tty)
@@ -93,13 +93,14 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version - Sp
           mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/part_09_ARM_ROOTFS.bin  /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd6-ARM-RootFileSystem.bin
           mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/part_08_ARM_KERNEL.bin  /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd7-ARM-Kernel.bin
           echo ""
-          echo ""
+          echo "--------------------------------------------------------------------------"
           echo "Process finished. All .bin files stored in:"
           echo ""
           echo "/root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/"
           cd /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/
           echo ""
           ls -al --color | grep .bin |  sed 's/.* //'
+          echo "--------------------------------------------------------------------------"
           echo ""
         ;;
 
@@ -164,13 +165,14 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version - Sp
           mv /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/part_09_ARM_ROOTFS.bin  /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/mtd6-ARM-RootFileSystem.bin
           mv /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/part_08_ARM_KERNEL.bin  /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/mtd7-ARM-Kernel.bin
           echo ""
-          echo ""
+          echo "--------------------------------------------------------------------------"
           echo "Process finished. All .bin files stored in:"
           echo ""
           echo "/root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/"
           cd /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/
           echo ""
           ls -al --color | grep .bin |  sed 's/.* //'
+          echo "--------------------------------------------------------------------------"
           echo ""
 
         ;;
