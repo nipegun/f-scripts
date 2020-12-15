@@ -5,10 +5,11 @@
 # not "free with terms and conditions", like GNU license and other similar crap.
 # If you talk all day about freedom, show it and make your code "really free".
 # You don´t have to accept any kind of license nor terms and conditions to use it,
-# cause it has no CopyRight or CopyLeft.   Enjoy!
+# cause it has no CopyRight or CopyLeft.
+# Enjoy!
 
 # -----------------------------------------------------------------------------------
-# The abelow commands downloads a firmware update for the Fritz!Box 6660 cablerouter.
+# The below commands downloads a firmware update for the Fritz!Box 6660 cablerouter.
 # extract the .ubin file from it, and then extracts from the .ubin file all the
 # .bin files needed to update the router via the FTP server of the EVA bootloader.
 #
