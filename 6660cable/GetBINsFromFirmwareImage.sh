@@ -95,10 +95,8 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version - Sp
           echo ""
           echo ""
           echo "Process finished. All .bin files stored in:"
+          echo ""
           echo "/root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/"
-          echo ""
-          echo ""
-
           cd /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/
           echo ""
           ls -al --color | grep .bin
@@ -168,10 +166,8 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version - Sp
           echo ""
           echo ""
           echo "Process finished. All .bin files stored in:"
+          echo ""
           echo "/root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/"
-          echo ""
-          echo ""
-
           cd /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/
           echo ""
           ls -al --color | grep .bin
