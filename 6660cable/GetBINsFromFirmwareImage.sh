@@ -36,7 +36,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version - Sp
 
           URL723d="http://download.avm.de/firmware/6660/8741253231/"
           File723d="FRITZ.Box_6660_Cable-07.23.image"
-          
+
           echo ""
           echo -e "${ColorGreen}Downloading 7.23 firmware, Deustchland version...${ColorEnd}"
           echo ""
@@ -52,7 +52,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version - Sp
           mkdir -p /root/FritzBox/6660cable/firmware/7.23/Deustchland/Image/ > /dev/null
           cd /root/FritzBox/6660cable/firmware/7.23/Deustchland/Image/
           wget --no-check-certificate $URL723d$File723d
-          
+
           echo ""
           echo "Extracting the image file..."
           echo ""
@@ -84,7 +84,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version - Sp
           echo "Result:"
           echo ""
           cat /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/Extraction.log
-          
+
           echo ""
           echo "Renaming .bin files for a better understanting of the flashing process..."
           echo ""
@@ -98,14 +98,18 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version - Sp
           echo "/root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/"
           echo ""
           echo ""
-          
+
+          cd /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/
+          echo ""
+          ls -al --color | grep .bin
+          echo ""
         ;;
 
         2)
-        
+
           URL723i="http://download.avm.de/firmware/6660/8741253231/"
           File723i="FRITZ.Box_6660_Cable-07.23.image"
-          
+
           echo ""
           echo -e "${ColorGreen}Downloading 7.23 firmware, International version...${ColorEnd}"
           echo ""
@@ -121,7 +125,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version - Sp
           mkdir -p /root/FritzBox/6660cable/firmware/7.23/International/Image/ > /dev/null
           cd /root/FritzBox/6660cable/firmware/7.23/International/Image/
           wget --no-check-certificate $URL723i$File723i
-          
+
           echo ""
           echo "Extracting the image file..."
           echo ""
@@ -153,7 +157,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version - Sp
           echo "Result:"
           echo ""
           cat /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/Extraction.log
-          
+
           echo ""
           echo "Renaming .bin files for a better understanting of the flashing process..."
           echo ""
@@ -166,6 +170,11 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware version - Sp
           echo "Process finished. All .bin files stored in:"
           echo "/root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/"
           echo ""
+          echo ""
+
+          cd /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/
+          echo ""
+          ls -al --color | grep .bin
           echo ""
 
         ;;
