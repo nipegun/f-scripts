@@ -27,7 +27,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, SSH injection (SpaceB
 
         1)
           echo ""
-          echo "Downloading uimg-tool source code..."
+          echo "Downloading ffritz source code..."
           echo ""
           rm -rf  /root/SourceCode/ffritz/ > /dev/null
           mkdir   /root/SourceCode/ 2> /dev/null
