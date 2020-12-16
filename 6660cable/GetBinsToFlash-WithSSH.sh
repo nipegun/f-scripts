@@ -71,6 +71,9 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, SSH injection (SpaceB
           echo "c:\FritzBox\6660cable\BinsToFlash\7.23deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23deustchland\WithSSH\mtd6.bin mtd6 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/FlashWithSSH.ps1
           echo "c:\FritzBox\6660cable\BinsToFlash\7.23deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23deustchland\WithSSH\mtd7.bin mtd7 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/FlashWithSSH.ps1
           echo "c:\FritzBox\6660cable\BinsToFlash\7.23deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { RebootTheDevice }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/FlashWithSSH.ps1
+          echo ""
+          echo "All files copied to c:\FritzBox\6660cable\BinsToFlash\7.23deustchland\"
+          echo ""
           exit
 
         ;;
