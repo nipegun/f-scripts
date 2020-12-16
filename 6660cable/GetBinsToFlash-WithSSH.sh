@@ -74,6 +74,9 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, SSH injection (SpaceB
           echo ""
           echo "All files copied to c:\FritzBox\6660cable\BinsToFlash\7.23deustchland\"
           echo ""
+          echo "Open PowerShell as Administrator and run:"
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23deustchland\FlashWithSSH.ps1"
+          echo ""
           exit
 
         ;;
