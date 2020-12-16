@@ -8,13 +8,6 @@
 # cause it has no CopyRight or CopyLeft.
 # Enjoy!
 
-# -----------------------------------------------------------------------------------
-# Script in beta state
-# Must be run in a Debian GNU/Linux distro with a bash shell
-# -----------------------------------------------------------------------------------
-
-
-
 ColorRed='\033[1;31m'
 ColorGreen='\033[1;32m'
 ColorEnd='\033[0m'
@@ -23,8 +16,8 @@ apt-get -y update > /dev/null
 apt-get -y install dialog rsync squashfs-tools > /dev/null
 
 menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, SSH injection (SpaceBar to mark, Enter to proceed):" 22 86 16)
-  options=(1 "Inject SSH into original 7.23 Firmware, Deustchland version" off
-           2 "Inject SSH into original 7.23 Firmware, International version" off)
+  options=(1 "Get Bins to flash 7.23 Firmware with SSH, Deustchland version" off
+           2 "Get Bins to flash 7.23 Firmware with SSH, International version" off)
   choices=$("${menu[@]}" "${options[@]}" 2>&1 >/dev/tty)
   clear
 
@@ -59,10 +52,25 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, SSH injection (SpaceB
           mv /root/SourceCode/ffritz/images/BinsWithSSH/part_02_ATOM_KERNEL.bin /root/SourceCode/ffritz/images/BinsWithSSH/mtd1-Atom-Kernel.bin
           mv /root/SourceCode/ffritz/images/BinsWithSSH/part_09_ARM_ROOTFS.bin  /root/SourceCode/ffritz/images/BinsWithSSH/mtd6-ARM-RootFileSystem.bin
           mv /root/SourceCode/ffritz/images/BinsWithSSH/part_08_ARM_KERNEL.bin  /root/SourceCode/ffritz/images/BinsWithSSH/mtd7-ARM-Kernel.bin
+
           echo ""
-          echo "All .bin files extracted to /root/SourceCode/ffritz/images/BinsWithSSH/"
-          echo "renamed and ready to flash to the mtdX partitions"
+          echo "Moving files to windows folders..."
           echo ""
+          mkdir -p /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/WithSSH/ > /dev/null
+          mv /root/SourceCode/ffritz/images/BinsWithSSH/mtd0-Atom-RootFileSystem.bin /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/WithSSH/mtd0.bin
+          mv /root/SourceCode/ffritz/images/BinsWithSSH/mtd1-Atom-Kernel.bin         /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/WithSSH/mtd1.bin
+          mv /root/SourceCode/ffritz/images/BinsWithSSH/mtd6-ARM-RootFileSystem.bin  /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/WithSSH/mtd6.bin
+          mv /root/SourceCode/ffritz/images/BinsWithSSH/mtd7-ARM-Kernel.bin          /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/WithSSH/mtd7.bin
+          wget --no-check-certificate https://github.com/PeterPawn/YourFritz/blob/master/eva_tools/EVA-Discover.ps1   -O /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/EVA-Discover.ps1
+          wget --no-check-certificate https://github.com/PeterPawn/YourFritz/blob/master/eva_tools/EVA-FTP-Client.ps1 -O /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/EVA-FTP-Client.ps1
+          echo ""
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23deustchland\EVA-Discover.ps1" > /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/FlashWithSSH.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { GetEnvironmentFile env }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/FlashWithSSH.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23deustchland\WithSSH\mtd0.bin mtd0 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/FlashWithSSH.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23deustchland\WithSSH\mtd1.bin mtd1 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/FlashWithSSH.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23deustchland\WithSSH\mtd6.bin mtd6 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/FlashWithSSH.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23deustchland\WithSSH\mtd7.bin mtd7 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/FlashWithSSH.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { RebootTheDevice }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/FlashWithSSH.ps1
           exit
 
         ;;
