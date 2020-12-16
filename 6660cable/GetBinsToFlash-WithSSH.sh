@@ -61,8 +61,8 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, SSH injection (SpaceB
           mv /root/SourceCode/ffritz/images/BinsWithSSH/mtd1-Atom-Kernel.bin         /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/WithSSH/mtd1.bin
           mv /root/SourceCode/ffritz/images/BinsWithSSH/mtd6-ARM-RootFileSystem.bin  /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/WithSSH/mtd6.bin
           mv /root/SourceCode/ffritz/images/BinsWithSSH/mtd7-ARM-Kernel.bin          /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/WithSSH/mtd7.bin
-          wget --no-check-certificate https://github.com/PeterPawn/YourFritz/blob/master/eva_tools/EVA-Discover.ps1   -O /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/EVA-Discover.ps1
-          wget --no-check-certificate https://github.com/PeterPawn/YourFritz/blob/master/eva_tools/EVA-FTP-Client.ps1 -O /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/EVA-FTP-Client.ps1
+          wget --no-check-certificate https://raw.githubusercontent.com/PeterPawn/YourFritz/master/eva_tools/EVA-Discover.ps1   -O /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/EVA-Discover.ps1
+          wget --no-check-certificate https://raw.githubusercontent.com/PeterPawn/YourFritz/master/eva_tools/EVA-FTP-Client.ps1 -O /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/EVA-FTP-Client.ps1
           echo ""
           echo "c:\FritzBox\6660cable\BinsToFlash\7.23deustchland\EVA-Discover.ps1" > /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/FlashWithSSH.ps1
           echo "c:\FritzBox\6660cable\BinsToFlash\7.23deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { GetEnvironmentFile env }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23deustchland/FlashWithSSH.ps1
