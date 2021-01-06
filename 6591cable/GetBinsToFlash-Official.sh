@@ -36,7 +36,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, firmware selection (S
         1)
 
           URL722d="http://download.avm.de/firmware/6591/8548751392/"
-          File72d="FRITZ.Box_6591_Cable-07.22.image"
+          File722d="FRITZ.Box_6591_Cable-07.22.image"
 
           echo ""
           echo -e "${ColorGreen}Downloading 7.22 firmware, Deustchland version...${ColorEnd}"
