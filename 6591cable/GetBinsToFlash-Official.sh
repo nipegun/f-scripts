@@ -59,7 +59,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, firmware selection (S
           echo ""
           mkdir -p /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtracted/ > /dev/null
           cd /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtracted/
-          tar xf /root/FritzBox/6660cable/firmware/7.23/Deustchland/Image/$File723d
+          tar xf /root/FritzBox/6591cable/firmware/7.22/Deustchland/Image/$File722d
 
           echo ""
           echo "Downloading uimg-tool source code..."
