@@ -203,10 +203,10 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, firmware selection (S
           echo "c:\FritzBox\6591cable\BinsToFlash\7.22International\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { RebootTheDevice }" >> /mnt/c/FritzBox/6591cable/BinsToFlash/7.22International/Flash.ps1
           echo ""
           echo "--------------------------------------------------------------------------"
-          echo "All files copied to c:\FritzBox\6591cable\BinsToFlash\7.22deustchland\ "
+          echo "All files copied to c:\FritzBox\6591cable\BinsToFlash\7.22International\ "
           echo ""
           echo "Open PowerShell as Administrator and run:"
-          echo "c:\FritzBox\6591cable\BinsToFlash\7.22deustchland\Flash.ps1"
+          echo "c:\FritzBox\6591cable\BinsToFlash\7.22International\Flash.ps1"
           echo "--------------------------------------------------------------------------"
           echo ""
 
