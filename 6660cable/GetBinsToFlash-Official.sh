@@ -96,27 +96,27 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware selection (S
           echo ""
           echo "Moving files to windows folders..."
           echo ""
-          mkdir -p /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/ > /dev/null
-          mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd0-Atom-RootFileSystem.bin /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/mtd0.bin
-          mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd1-Atom-Kernel.bin         /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/mtd1.bin
-          mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd6-ARM-RootFileSystem.bin  /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/mtd6.bin
-          mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd7-ARM-Kernel.bin          /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/mtd7.bin
-          wget --no-check-certificate https://raw.githubusercontent.com/PeterPawn/YourFritz/master/eva_tools/EVA-Discover.ps1   -O /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/EVA-Discover.ps1
-          wget --no-check-certificate https://raw.githubusercontent.com/PeterPawn/YourFritz/master/eva_tools/EVA-FTP-Client.ps1 -O /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/EVA-FTP-Client.ps1
+          mkdir -p /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-Deustchland/ > /dev/null
+          mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd0-Atom-RootFileSystem.bin /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-Deustchland/mtd0.bin
+          mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd1-Atom-Kernel.bin         /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-Deustchland/mtd1.bin
+          mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd6-ARM-RootFileSystem.bin  /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-Deustchland/mtd6.bin
+          mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd7-ARM-Kernel.bin          /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-Deustchland/mtd7.bin
+          wget --no-check-certificate https://raw.githubusercontent.com/PeterPawn/YourFritz/master/eva_tools/EVA-Discover.ps1   -O /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-Deustchland/EVA-Discover.ps1
+          wget --no-check-certificate https://raw.githubusercontent.com/PeterPawn/YourFritz/master/eva_tools/EVA-FTP-Client.ps1 -O /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-Deustchland/EVA-FTP-Client.ps1
           echo ""
-          echo "c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\EVA-Discover.ps1" > /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/Flash.ps1
-          echo "c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { GetEnvironmentFile env }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/Flash.ps1
-          echo "c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\mtd0.bin mtd0 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/Flash.ps1
-          echo "c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\mtd1.bin mtd1 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/Flash.ps1
-          echo "c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\mtd6.bin mtd6 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/Flash.ps1
-          echo "c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\mtd7.bin mtd7 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Ddeustchland/Flash.ps1
-          echo "c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { RebootTheDevice }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23-Deustchland\EVA-Discover.ps1" > /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-Deustchland/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23-Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { GetEnvironmentFile env }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-Deustchland/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23-Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23-Deustchland\mtd0.bin mtd0 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-Deustchland/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23-Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23-Deustchland\mtd1.bin mtd1 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-Deustchland/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23-Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23-Deustchland\mtd6.bin mtd6 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-Deustchland/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23-Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23-Deustchland\mtd7.bin mtd7 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Ddeustchland/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23-Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { RebootTheDevice }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-Deustchland/Flash.ps1
           echo ""
           echo "--------------------------------------------------------------------------"
-          echo "All files copied to c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\ "
+          echo "All files copied to c:\FritzBox\6660cable\BinsToFlash\7.23-Deustchland\ "
           echo ""
           echo "Open PowerShell as Administrator and run:"
-          echo "c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\Flash.ps1"
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23-Deustchland\Flash.ps1"
           echo "--------------------------------------------------------------------------"
           echo ""
 
@@ -186,27 +186,27 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware selection (S
           echo ""
           echo "Moving files to windows folders..."
           echo ""
-          mkdir -p /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/ > /dev/null
-          mv /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/mtd0-Atom-RootFileSystem.bin /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/mtd0.bin
-          mv /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/mtd1-Atom-Kernel.bin         /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/mtd1.bin
-          mv /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/mtd6-ARM-RootFileSystem.bin  /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/mtd6.bin
-          mv /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/mtd7-ARM-Kernel.bin          /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/mtd7.bin
-          wget --no-check-certificate https://raw.githubusercontent.com/PeterPawn/YourFritz/master/eva_tools/EVA-Discover.ps1   -O /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/EVA-Discover.ps1
-          wget --no-check-certificate https://raw.githubusercontent.com/PeterPawn/YourFritz/master/eva_tools/EVA-FTP-Client.ps1 -O /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/EVA-FTP-Client.ps1
+          mkdir -p /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International/ > /dev/null
+          mv /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/mtd0-Atom-RootFileSystem.bin /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International/mtd0.bin
+          mv /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/mtd1-Atom-Kernel.bin         /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International/mtd1.bin
+          mv /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/mtd6-ARM-RootFileSystem.bin  /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International/mtd6.bin
+          mv /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/mtd7-ARM-Kernel.bin          /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International/mtd7.bin
+          wget --no-check-certificate https://raw.githubusercontent.com/PeterPawn/YourFritz/master/eva_tools/EVA-Discover.ps1   -O /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International/EVA-Discover.ps1
+          wget --no-check-certificate https://raw.githubusercontent.com/PeterPawn/YourFritz/master/eva_tools/EVA-FTP-Client.ps1 -O /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International/EVA-FTP-Client.ps1
           echo ""
-          echo "c:\FritzBox\6660cable\BinsToFlash\7.23International\EVA-Discover.ps1" > /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/Flash.ps1
-          echo "c:\FritzBox\6660cable\BinsToFlash\7.23International\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { GetEnvironmentFile env }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/Flash.ps1
-          echo "c:\FritzBox\6660cable\BinsToFlash\7.23International\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23International\mtd0.bin mtd0 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/Flash.ps1
-          echo "c:\FritzBox\6660cable\BinsToFlash\7.23International\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23International\mtd1.bin mtd1 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/Flash.ps1
-          echo "c:\FritzBox\6660cable\BinsToFlash\7.23International\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23International\mtd6.bin mtd6 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/Flash.ps1
-          echo "c:\FritzBox\6660cable\BinsToFlash\7.23International\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23International\mtd7.bin mtd7 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/Flash.ps1
-          echo "c:\FritzBox\6660cable\BinsToFlash\7.23International\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { RebootTheDevice }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23-International\EVA-Discover.ps1" > /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23-International\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { GetEnvironmentFile env }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23-International\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23-International\mtd0.bin mtd0 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23-International\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23-International\mtd1.bin mtd1 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23-International\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23-International\mtd6.bin mtd6 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23-International\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23-International\mtd7.bin mtd7 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23-International\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { RebootTheDevice }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International/Flash.ps1
           echo ""
           echo "--------------------------------------------------------------------------"
-          echo "All files copied to c:\FritzBox\6660cable\BinsToFlash\7.23International\ "
+          echo "All files copied to c:\FritzBox\6660cable\BinsToFlash\7.23-International\ "
           echo ""
           echo "Open PowerShell as Administrator and run:"
-          echo "c:\FritzBox\6660cable\BinsToFlash\7.23International\Flash.ps1"
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23-International\Flash.ps1"
           echo "--------------------------------------------------------------------------"
           echo ""
 
