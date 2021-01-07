@@ -32,6 +32,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, SSH injection (SpaceB
           rm -rf  /root/SourceCode/ffritz/ > /dev/null
           mkdir   /root/SourceCode/ 2> /dev/null
           cd      /root/SourceCode/
+          rm -rf /root/SourceCode/ffritz/
           git clone --branch 6591 https://fesc2000@bitbucket.org/fesc2000/ffritz.git
 
           echo ""
@@ -89,6 +90,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, SSH injection (SpaceB
           rm -rf  /root/SourceCode/ffritz/ > /dev/null
           mkdir   /root/SourceCode/ 2> /dev/null
           cd      /root/SourceCode/
+          rm -rf /root/SourceCode/ffritz/
           git clone --branch 6591 https://fesc2000@bitbucket.org/fesc2000/ffritz.git
 
           echo ""
