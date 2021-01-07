@@ -110,7 +110,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, firmware selection (S
           echo "c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland\mtd0.bin mtd0 }" >> /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-Deustchland/Flash.ps1
           echo "c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland\mtd1.bin mtd1 }" >> /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-Deustchland/Flash.ps1
           echo "c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland\mtd6.bin mtd6 }" >> /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-Deustchland/Flash.ps1
-          echo "c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland\mtd7.bin mtd7 }" >> /mnt/c/FritzBox/6591cable/BinsToFlash/7.22Ddeustchland/Flash.ps1
+          echo "c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland\mtd7.bin mtd7 }" >> /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-Deustchland/Flash.ps1
           echo "c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { RebootTheDevice }" >> /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-Deustchland/Flash.ps1
           echo ""
           echo "--------------------------------------------------------------------------"
