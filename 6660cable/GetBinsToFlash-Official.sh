@@ -50,6 +50,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware selection (S
           echo ""
           echo "Downloading the firmware update image file..."
           echo ""
+          rm -rf /root/FritzBox/6660cable/firmware/7.23/Deustchland/Image/
           mkdir -p /root/FritzBox/6660cable/firmware/7.23/Deustchland/Image/ > /dev/null
           cd /root/FritzBox/6660cable/firmware/7.23/Deustchland/Image/
           wget --no-check-certificate $URL722d$File722d
@@ -140,6 +141,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware selection (S
           echo ""
           echo "Downloading the firmware update image file..."
           echo ""
+          rm -rf /root/FritzBox/6660cable/firmware/7.23/International/Image/
           mkdir -p /root/FritzBox/6660cable/firmware/7.23/International/Image/ > /dev/null
           cd /root/FritzBox/6660cable/firmware/7.23/International/Image/
           wget --no-check-certificate $URL722i$File722i
