@@ -26,8 +26,9 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, SSH injection (SpaceB
       case $choice in
 
         1)
+
           echo ""
-          echo "Downloading ffritz source code..."
+          echo -e "${ColorGreen}Downloading ffritz source code...${ColorEnd}"
           echo ""
           rm -rf  /root/SourceCode/ffritz/ > /dev/null
           mkdir   /root/SourceCode/ 2> /dev/null
@@ -36,7 +37,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, SSH injection (SpaceB
           git clone --branch 6591 https://fesc2000@bitbucket.org/fesc2000/ffritz.git
 
           echo ""
-          echo "Compiling..."
+          echo -e "${ColorGreen}Compiling...${ColorEnd}"
           echo ""
           echo "URL=http://download.avm.de/firmware/6591/8548751392/FRITZ.Box_6591_Cable-07.22.image" > /root/SourceCode/ffritz/conf.mk
           echo "KEEP_ORIG = 1" >> /root/SourceCode/ffritz/conf.mk
@@ -55,7 +56,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, SSH injection (SpaceB
           mv /root/SourceCode/ffritz/images/BinsWithSSH/part_08_ARM_KERNEL.bin  /root/SourceCode/ffritz/images/BinsWithSSH/mtd7-ARM-Kernel.bin
 
           echo ""
-          echo "Moving files to windows folders..."
+          echo -e "${ColorGreen}Moving files to windows folders...${ColorEnd}"
           echo ""
           mkdir -p /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-Deustchland-WithSSH/ > /dev/null
           mv /root/SourceCode/ffritz/images/BinsWithSSH/mtd0-Atom-RootFileSystem.bin /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-Deustchland-WithSSH/mtd0.bin
@@ -73,10 +74,11 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, SSH injection (SpaceB
           echo "c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland-WithSSH\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland-WithSSH\mtd7.bin mtd7 }" >> /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-Deustchland-WithSSH/FlashWithSSH.ps1
           echo "c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland-WithSSH\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { RebootTheDevice }" >> /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-Deustchland-WithSSH/FlashWithSSH.ps1
           echo ""
-          echo "All files copied to c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland-WithSSH\ "
+
+          echo -e "${ColorGreen}All files copied to c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland-WithSSH\ ${ColorEnd}"
           echo ""
-          echo "Open PowerShell as Administrator and run:"
-          echo "c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland-WithSSH\FlashWithSSH.ps1"
+          echo -e "${ColorGreen}Open PowerShell as Administrator and run:${ColorEnd}"
+          echo -e "${ColorGreen}c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland-WithSSH\FlashWithSSH.ps1${ColorEnd}"
           echo ""
 
           exit
@@ -84,8 +86,9 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, SSH injection (SpaceB
         ;;
 
         2)
+
           echo ""
-          echo "Downloading ffritz source code..."
+          echo -e "${ColorGreen}Downloading ffritz source code...${ColorEnd}"
           echo ""
           rm -rf  /root/SourceCode/ffritz/ > /dev/null
           mkdir   /root/SourceCode/ 2> /dev/null
@@ -94,7 +97,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, SSH injection (SpaceB
           git clone --branch 6591 https://fesc2000@bitbucket.org/fesc2000/ffritz.git
 
           echo ""
-          echo "Compiling..."
+          echo -e "${ColorGreen}Compiling...${ColorEnd}"
           echo ""
           echo "URL=http://download.avm.de/firmware/6591/8548751392/FRITZ.Box_6591_Cable-07.22.image" > /root/SourceCode/ffritz/conf.mk
           echo "KEEP_ORIG = 1" >> /root/SourceCode/ffritz/conf.mk
@@ -113,7 +116,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, SSH injection (SpaceB
           mv /root/SourceCode/ffritz/images/BinsWithSSH/part_08_ARM_KERNEL.bin  /root/SourceCode/ffritz/images/BinsWithSSH/mtd7-ARM-Kernel.bin
 
           echo ""
-          echo "Moving files to windows folders..."
+          echo -e "${ColorGreen}Moving files to windows folders...${ColorEnd}"
           echo ""
           mkdir -p /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-International-WithSSH/ > /dev/null
           mv /root/SourceCode/ffritz/images/BinsWithSSH/mtd0-Atom-RootFileSystem.bin /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-International-WithSSH/mtd0.bin
@@ -131,10 +134,11 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, SSH injection (SpaceB
           echo "c:\FritzBox\6591cable\BinsToFlash\7.22-International-WithSSH\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6591cable\BinsToFlash\7.22-International-WithSSH\mtd7.bin mtd7 }" >> /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-International-WithSSH/FlashWithSSH.ps1
           echo "c:\FritzBox\6591cable\BinsToFlash\7.22-International-WithSSH\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { RebootTheDevice }" >> /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-International-WithSSH/FlashWithSSH.ps1
           echo ""
-          echo "All files copied to c:\FritzBox\6591cable\BinsToFlash\7.22-International-WithSSH\ "
+
+          echo -e "${ColorGreen}All files copied to c:\FritzBox\6591cable\BinsToFlash\7.22-International-WithSSH\ ${ColorEnd}"
           echo ""
-          echo "Open PowerShell as Administrator and run:"
-          echo "c:\FritzBox\6591cable\BinsToFlash\7.22-International-WithSSH\FlashWithSSH.ps1"
+          echo -e "${ColorGreen}Open PowerShell as Administrator and run:${ColorEnd}"
+          echo -e "${ColorGreen}c:\FritzBox\6591cable\BinsToFlash\7.22-International-WithSSH\FlashWithSSH.ps1${ColorEnd}"
           echo ""
 
           exit
