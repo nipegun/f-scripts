@@ -35,20 +35,22 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, firmware selection (S
 
         1)
 
+          echo ""
+          echo -e "${ColorGreen}-------------------------------------------------${ColorEnd}"
+          echo -e "${ColorGreen}Downloading 7.22 firmware, Deustchland version...${ColorEnd}"
+          echo -e "${ColorGreen}-------------------------------------------------${ColorEnd}"
+          echo ""
+
           URL722d="http://download.avm.de/firmware/6591/8548751392/"
           File722d="FRITZ.Box_6591_Cable-07.22.image"
 
           echo ""
-          echo -e "${ColorGreen}Downloading 7.22 firmware, Deustchland version...${ColorEnd}"
-          echo ""
-
-          echo ""
-          echo "Installing some mandatory packages from the distro repository..."
+          echo -e "${ColorGreen}Installing some mandatory packages from the distro repository...${ColorEnd}"
           echo ""
           apt-get -y install wget tar git build-essential > /dev/null
 
           echo ""
-          echo "Downloading the firmware update image file..."
+          echo -e "${ColorGreen}Downloading the firmware update image file...${ColorEnd}"
           echo ""
           rm -rf /root/FritzBox/6591cable/firmware/7.22/Deustchland/Image/
           mkdir -p /root/FritzBox/6591cable/firmware/7.22/Deustchland/Image/ > /dev/null
@@ -56,14 +58,14 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, firmware selection (S
           wget --no-check-certificate $URL722d$File722d
 
           echo ""
-          echo "Extracting the image file..."
+          echo -e "${ColorGreen}Extracting the image file...${ColorEnd}"
           echo ""
           mkdir -p /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtracted/ > /dev/null
           cd /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtracted/
           tar xf /root/FritzBox/6591cable/firmware/7.22/Deustchland/Image/$File722d
 
           echo ""
-          echo "Downloading uimg-tool source code..."
+          echo -e "${ColorGreen}Downloading uimg-tool source code...${ColorEnd}"
           echo ""
           rm -rf  /root/SourceCode/uimg-tool/ > /dev/null
           mkdir   /root/SourceCode/ > /dev/null
@@ -71,31 +73,32 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, firmware selection (S
           git clone --depth=1 http://bitbucket.org/fesc2000/uimg-tool/
 
           echo ""
-          echo "Compiling uimg-tool..."
+          echo -e "${ColorGreen}Compiling uimg-tool...${ColorEnd}"
           echo ""
           cd /root/SourceCode/uimg-tool/
           make
 
           echo ""
-          echo "Extracting .bin files from .uimg file..."
+          echo -e "${ColorGreen}Extracting .bin files from .uimg file...${ColorEnd}"
           echo ""
           mkdir /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtractedBINs/ > /dev/null
           cd /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtractedBINs/
           /root/SourceCode/uimg-tool/uimg -u -n part /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtracted/var/firmware-update.uimg > /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtractedBINs/Extraction.log
           echo ""
-          echo "Result:"
+          echo -e "${ColorGreen}Result:${ColorEnd}"
           echo ""
           cat /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtractedBINs/Extraction.log
 
           echo ""
-          echo "Renaming .bin files for a better understanting of the flashing process..."
+          echo -e "${ColorGreen}Renaming .bin files for a better understanting of the flashing process...${ColorEnd}"
           echo ""
           mv /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtractedBINs/part_03_ATOM_ROOTFS.bin /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtractedBINs/mtd0-Atom-RootFileSystem.bin
           mv /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtractedBINs/part_02_ATOM_KERNEL.bin /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtractedBINs/mtd1-Atom-Kernel.bin
           mv /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtractedBINs/part_09_ARM_ROOTFS.bin  /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtractedBINs/mtd6-ARM-RootFileSystem.bin
           mv /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtractedBINs/part_08_ARM_KERNEL.bin  /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtractedBINs/mtd7-ARM-Kernel.bin
+
           echo ""
-          echo "Moving files to windows folders..."
+          echo -e "${ColorGreen}Moving files to windows folders...${ColorEnd}"
           echo ""
           mkdir -p /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-Deustchland/ > /dev/null
           mv /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtractedBINs/mtd0-Atom-RootFileSystem.bin /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-Deustchland/mtd0.bin
@@ -126,20 +129,23 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, firmware selection (S
         ;;
 
         2)
+
+          echo ""
+          echo -e "${ColorGreen}---------------------------------------------------${ColorEnd}"
+          echo -e "${ColorGreen}Downloading 7.22 firmware, International version...${ColorEnd}"
+          echo -e "${ColorGreen}---------------------------------------------------${ColorEnd}"
+          echo ""
+
           URL722i="http://download.avm.de/firmware/6591/8548751392/"
           File722i="FRITZ.Box_6591_Cable-07.22.image"
 
           echo ""
-          echo -e "${ColorGreen}Downloading 7.22 firmware, International version...${ColorEnd}"
-          echo ""
-
-          echo ""
-          echo "Installing some mandatory packages from the distro repository..."
+          echo -e "${ColorGreen}Installing some mandatory packages from the distro repository...${ColorEnd}"
           echo ""
           apt-get -y install wget tar git build-essential > /dev/null
 
           echo ""
-          echo "Downloading the firmware update image file..."
+          echo -e "${ColorGreen}Downloading the firmware update image file...${ColorEnd}"
           echo ""
           rm -rf /root/FritzBox/6591cable/firmware/7.22/International/Image/
           mkdir -p /root/FritzBox/6591cable/firmware/7.22/International/Image/ > /dev/null
@@ -147,14 +153,14 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, firmware selection (S
           wget --no-check-certificate $URL722i$File722i
 
           echo ""
-          echo "Extracting the image file..."
+          echo -e "${ColorGreen}Extracting the image file...${ColorEnd}"
           echo ""
           mkdir -p /root/FritzBox/6591cable/firmware/7.22/International/ImageExtracted/ > /dev/null
           cd /root/FritzBox/6591cable/firmware/7.22/International/ImageExtracted/
           tar xf /root/FritzBox/6591cable/firmware/7.22/International/Image/$File722i
 
           echo ""
-          echo "Downloading uimg-tool source code..."
+          echo -e "${ColorGreen}Downloading uimg-tool source code...${ColorEnd}"
           echo ""
           rm -rf  /root/SourceCode/uimg-tool/ > /dev/null
           mkdir   /root/SourceCode/ > /dev/null
@@ -162,31 +168,32 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, firmware selection (S
           git clone --depth=1 http://bitbucket.org/fesc2000/uimg-tool/
 
           echo ""
-          echo "Compiling uimg-tool..."
+          echo -e "${ColorGreen}Compiling uimg-tool...${ColorEnd}"
           echo ""
           cd /root/SourceCode/uimg-tool/
           make
 
           echo ""
-          echo "Extracting .bin files from .uimg file..."
+          echo -e "${ColorGreen}Extracting .bin files from .uimg file...${ColorEnd}"
           echo ""
           mkdir /root/FritzBox/6591cable/firmware/7.22/International/ImageExtractedBINs/ > /dev/null
           cd /root/FritzBox/6591cable/firmware/7.22/International/ImageExtractedBINs/
           /root/SourceCode/uimg-tool/uimg -u -n part /root/FritzBox/6591cable/firmware/7.22/International/ImageExtracted/var/firmware-update.uimg > /root/FritzBox/6591cable/firmware/7.22/International/ImageExtractedBINs/Extraction.log
           echo ""
-          echo "Result:"
+          echo -e "${ColorGreen}Result:${ColorEnd}"
           echo ""
           cat /root/FritzBox/6591cable/firmware/7.22/International/ImageExtractedBINs/Extraction.log
 
           echo ""
-          echo "Renaming .bin files for a better understanting of the flashing process..."
+          echo -e "${ColorGreen}Renaming .bin files for a better understanting of the flashing process...${ColorEnd}"
           echo ""
           mv /root/FritzBox/6591cable/firmware/7.22/International/ImageExtractedBINs/part_03_ATOM_ROOTFS.bin /root/FritzBox/6591cable/firmware/7.22/International/ImageExtractedBINs/mtd0-Atom-RootFileSystem.bin
           mv /root/FritzBox/6591cable/firmware/7.22/International/ImageExtractedBINs/part_02_ATOM_KERNEL.bin /root/FritzBox/6591cable/firmware/7.22/International/ImageExtractedBINs/mtd1-Atom-Kernel.bin
           mv /root/FritzBox/6591cable/firmware/7.22/International/ImageExtractedBINs/part_09_ARM_ROOTFS.bin  /root/FritzBox/6591cable/firmware/7.22/International/ImageExtractedBINs/mtd6-ARM-RootFileSystem.bin
           mv /root/FritzBox/6591cable/firmware/7.22/International/ImageExtractedBINs/part_08_ARM_KERNEL.bin  /root/FritzBox/6591cable/firmware/7.22/International/ImageExtractedBINs/mtd7-ARM-Kernel.bin
+
           echo ""
-          echo "Moving files to windows folders..."
+          echo -e "${ColorGreen}Moving files to windows folders...${ColorEnd}"
           echo ""
           mkdir -p /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-International/ > /dev/null
           mv /root/FritzBox/6591cable/firmware/7.22/International/ImageExtractedBINs/mtd0-Atom-RootFileSystem.bin /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-International/mtd0.bin
