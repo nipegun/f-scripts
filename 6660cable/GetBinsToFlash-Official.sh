@@ -35,8 +35,8 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware selection (S
 
         1)
 
-          URL723d="http://download.avm.de/firmware/6660/8741253231/"
-          File723d="FRITZ.Box_6660_Cable-07.23.image"
+          URL722d="http://download.avm.de/firmware/6660/8741253231/"
+          File722d="FRITZ.Box_6660_Cable-07.23.image"
 
           echo ""
           echo -e "${ColorGreen}Downloading 7.23 firmware, Deustchland version...${ColorEnd}"
@@ -52,14 +52,14 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware selection (S
           echo ""
           mkdir -p /root/FritzBox/6660cable/firmware/7.23/Deustchland/Image/ > /dev/null
           cd /root/FritzBox/6660cable/firmware/7.23/Deustchland/Image/
-          wget --no-check-certificate $URL723d$File723d
+          wget --no-check-certificate $URL722d$File722d
 
           echo ""
           echo "Extracting the image file..."
           echo ""
           mkdir -p /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtracted/ > /dev/null
           cd /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtracted/
-          tar xf /root/FritzBox/6660cable/firmware/7.23/Deustchland/Image/$File723d
+          tar xf /root/FritzBox/6660cable/firmware/7.23/Deustchland/Image/$File722d
 
           echo ""
           echo "Downloading uimg-tool source code..."
@@ -94,13 +94,29 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware selection (S
           mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/part_09_ARM_ROOTFS.bin  /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd6-ARM-RootFileSystem.bin
           mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/part_08_ARM_KERNEL.bin  /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd7-ARM-Kernel.bin
           echo ""
+          echo "Moving files to windows folders..."
+          echo ""
+          mkdir -p /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/ > /dev/null
+          mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd0-Atom-RootFileSystem.bin /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/mtd0.bin
+          mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd1-Atom-Kernel.bin         /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/mtd1.bin
+          mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd6-ARM-RootFileSystem.bin  /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/mtd6.bin
+          mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd7-ARM-Kernel.bin          /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/mtd7.bin
+          wget --no-check-certificate https://raw.githubusercontent.com/PeterPawn/YourFritz/master/eva_tools/EVA-Discover.ps1   -O /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/EVA-Discover.ps1
+          wget --no-check-certificate https://raw.githubusercontent.com/PeterPawn/YourFritz/master/eva_tools/EVA-FTP-Client.ps1 -O /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/EVA-FTP-Client.ps1
+          echo ""
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\EVA-Discover.ps1" > /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { GetEnvironmentFile env }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\mtd0.bin mtd0 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\mtd1.bin mtd1 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\mtd6.bin mtd6 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\mtd7.bin mtd7 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Ddeustchland/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { RebootTheDevice }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23Deustchland/Flash.ps1
+          echo ""
           echo "--------------------------------------------------------------------------"
-          echo "Process finished. All .bin files stored in:"
+          echo "All files copied to c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\ "
           echo ""
-          echo "/root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/"
-          cd /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/
-          echo ""
-          ls -al --color | grep .bin |  sed 's/.* //'
+          echo "Open PowerShell as Administrator and run:"
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23Deustchland\Flash.ps1"
           echo "--------------------------------------------------------------------------"
           echo ""
 
@@ -109,9 +125,8 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware selection (S
         ;;
 
         2)
-
-          URL723i="http://download.avm.de/firmware/6660/8741253231/"
-          File723i="FRITZ.Box_6660_Cable-07.23.image"
+          URL722i="http://download.avm.de/firmware/6660/8741253231/"
+          File722i="FRITZ.Box_6660_Cable-07.23.image"
 
           echo ""
           echo -e "${ColorGreen}Downloading 7.23 firmware, International version...${ColorEnd}"
@@ -127,14 +142,14 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware selection (S
           echo ""
           mkdir -p /root/FritzBox/6660cable/firmware/7.23/International/Image/ > /dev/null
           cd /root/FritzBox/6660cable/firmware/7.23/International/Image/
-          wget --no-check-certificate $URL723i$File723i
+          wget --no-check-certificate $URL722i$File722i
 
           echo ""
           echo "Extracting the image file..."
           echo ""
           mkdir -p /root/FritzBox/6660cable/firmware/7.23/International/ImageExtracted/ > /dev/null
           cd /root/FritzBox/6660cable/firmware/7.23/International/ImageExtracted/
-          tar xf /root/FritzBox/6660cable/firmware/7.23/International/Image/$File723i
+          tar xf /root/FritzBox/6660cable/firmware/7.23/International/Image/$File722i
 
           echo ""
           echo "Downloading uimg-tool source code..."
@@ -169,13 +184,29 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware selection (S
           mv /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/part_09_ARM_ROOTFS.bin  /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/mtd6-ARM-RootFileSystem.bin
           mv /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/part_08_ARM_KERNEL.bin  /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/mtd7-ARM-Kernel.bin
           echo ""
+          echo "Moving files to windows folders..."
+          echo ""
+          mkdir -p /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/ > /dev/null
+          mv /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/mtd0-Atom-RootFileSystem.bin /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/mtd0.bin
+          mv /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/mtd1-Atom-Kernel.bin         /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/mtd1.bin
+          mv /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/mtd6-ARM-RootFileSystem.bin  /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/mtd6.bin
+          mv /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/mtd7-ARM-Kernel.bin          /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/mtd7.bin
+          wget --no-check-certificate https://raw.githubusercontent.com/PeterPawn/YourFritz/master/eva_tools/EVA-Discover.ps1   -O /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/EVA-Discover.ps1
+          wget --no-check-certificate https://raw.githubusercontent.com/PeterPawn/YourFritz/master/eva_tools/EVA-FTP-Client.ps1 -O /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/EVA-FTP-Client.ps1
+          echo ""
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23International\EVA-Discover.ps1" > /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23International\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { GetEnvironmentFile env }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23International\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23International\mtd0.bin mtd0 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23International\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23International\mtd1.bin mtd1 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23International\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23International\mtd6.bin mtd6 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23International\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6660cable\BinsToFlash\7.23International\mtd7.bin mtd7 }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/Flash.ps1
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23International\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { RebootTheDevice }" >> /mnt/c/FritzBox/6660cable/BinsToFlash/7.23International/Flash.ps1
+          echo ""
           echo "--------------------------------------------------------------------------"
-          echo "Process finished. All .bin files stored in:"
+          echo "All files copied to c:\FritzBox\6660cable\BinsToFlash\7.23International\ "
           echo ""
-          echo "/root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/"
-          cd /root/FritzBox/6660cable/firmware/7.23/International/ImageExtractedBINs/
-          echo ""
-          ls -al --color | grep .bin |  sed 's/.* //'
+          echo "Open PowerShell as Administrator and run:"
+          echo "c:\FritzBox\6660cable\BinsToFlash\7.23International\Flash.ps1"
           echo "--------------------------------------------------------------------------"
           echo ""
 
