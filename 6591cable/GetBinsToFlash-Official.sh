@@ -116,12 +116,13 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, firmware selection (S
           echo "c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland\mtd7.bin mtd7 }" >> /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-Deustchland/Flash.ps1
           echo "c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { RebootTheDevice }" >> /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-Deustchland/Flash.ps1
           echo ""
-          echo "--------------------------------------------------------------------------"
-          echo "All files copied to c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland\ "
+
+          echo -e "${ColorGreen}--------------------------------------------------------------------------${ColorEnd}"
+          echo -e "${ColorGreen}All files copied to c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland\ ${ColorEnd}"
           echo ""
-          echo "Open PowerShell as Administrator and run:"
-          echo "c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland\Flash.ps1"
-          echo "--------------------------------------------------------------------------"
+          echo -e "${ColorGreen}Open PowerShell as Administrator and run:${ColorEnd}"
+          echo -e "${ColorGreen}c:\FritzBox\6591cable\BinsToFlash\7.22-Deustchland\Flash.ps1${ColorEnd}"
+          echo -e "${ColorGreen}--------------------------------------------------------------------------${ColorEnd}"
           echo ""
 
           exit
@@ -211,12 +212,13 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, firmware selection (S
           echo "c:\FritzBox\6591cable\BinsToFlash\7.22-International\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { UploadFlashFile c:\FritzBox\6591cable\BinsToFlash\7.22-International\mtd7.bin mtd7 }" >> /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-International/Flash.ps1
           echo "c:\FritzBox\6591cable\BinsToFlash\7.22-International\EVA-FTP-Client.ps1 -Verbose -Debug -ScriptBlock { RebootTheDevice }" >> /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-International/Flash.ps1
           echo ""
-          echo "--------------------------------------------------------------------------"
-          echo "All files copied to c:\FritzBox\6591cable\BinsToFlash\7.22-International\ "
+
+          echo -e "${ColorGreen}--------------------------------------------------------------------------${ColorEnd}"
+          echo -e "${ColorGreen}All files copied to c:\FritzBox\6591cable\BinsToFlash\7.22-International\ ${ColorEnd}"
           echo ""
-          echo "Open PowerShell as Administrator and run:"
-          echo "c:\FritzBox\6591cable\BinsToFlash\7.22-International\Flash.ps1"
-          echo "--------------------------------------------------------------------------"
+          echo -e "${ColorGreen}Open PowerShell as Administrator and run:${ColorEnd}"
+          echo -e "${ColorGreen}c:\FritzBox\6591cable\BinsToFlash\7.22-International\Flash.ps1${ColorEnd}"
+          echo -e "${ColorGreen}--------------------------------------------------------------------------${ColorEnd}"
           echo ""
 
           exit
