@@ -32,12 +32,12 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, SSH injection (SpaceB
           rm -rf  /root/SourceCode/ffritz/ > /dev/null
           mkdir   /root/SourceCode/ 2> /dev/null
           cd      /root/SourceCode/
-          git clone --branch 6660 https://fesc2000@bitbucket.org/fesc2000/ffritz.git
+          git clone --branch 6591 https://fesc2000@bitbucket.org/fesc2000/ffritz.git
 
           echo ""
           echo "Compiling..."
           echo ""
-          echo "URL=http://download.avm.de/firmware/6660/8548751392/FRITZ.Box_6660_Cable-07.23.image" > /root/SourceCode/ffritz/conf.mk
+          echo "URL=http://download.avm.de/firmware/6660/8741253231/FRITZ.Box_6660_Cable-07.23.image" > /root/SourceCode/ffritz/conf.mk
           echo "KEEP_ORIG = 1" >> /root/SourceCode/ffritz/conf.mk
           echo "SDK_DOWNLOAD=1" >> /root/SourceCode/ffritz/conf.mk
           cd /root/SourceCode/ffritz/
@@ -89,12 +89,12 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, SSH injection (SpaceB
           rm -rf  /root/SourceCode/ffritz/ > /dev/null
           mkdir   /root/SourceCode/ 2> /dev/null
           cd      /root/SourceCode/
-          git clone --branch 6660 https://fesc2000@bitbucket.org/fesc2000/ffritz.git
+          git clone --branch 6591 https://fesc2000@bitbucket.org/fesc2000/ffritz.git
 
           echo ""
           echo "Compiling..."
           echo ""
-          echo "URL=http://download.avm.de/firmware/6660/8548751392/FRITZ.Box_6660_Cable-07.23.image" > /root/SourceCode/ffritz/conf.mk
+          echo "URL=http://download.avm.de/firmware/6660/8741253231/FRITZ.Box_6660_Cable-07.23.image" > /root/SourceCode/ffritz/conf.mk
           echo "KEEP_ORIG = 1" >> /root/SourceCode/ffritz/conf.mk
           echo "SDK_DOWNLOAD=1" >> /root/SourceCode/ffritz/conf.mk
           cd /root/SourceCode/ffritz/
