@@ -149,14 +149,14 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, firmware selection (S
           echo -e "${ColorGreen}Downloading the firmware update image file...${ColorEnd}"
           echo ""
           rm -rf /root/FritzBox/6591cable/firmware/7.22/International/Image/
-          mkdir -p /root/FritzBox/6591cable/firmware/7.22/International/Image/ > /dev/null
+          mkdir -p /root/FritzBox/6591cable/firmware/7.22/International/Image/ 2> /dev/null
           cd /root/FritzBox/6591cable/firmware/7.22/International/Image/
           wget --no-check-certificate $URL722i$File722i
 
           echo ""
           echo -e "${ColorGreen}Extracting the image file...${ColorEnd}"
           echo ""
-          mkdir -p /root/FritzBox/6591cable/firmware/7.22/International/ImageExtracted/ > /dev/null
+          mkdir -p /root/FritzBox/6591cable/firmware/7.22/International/ImageExtracted/ 2> /dev/null
           cd /root/FritzBox/6591cable/firmware/7.22/International/ImageExtracted/
           tar xf /root/FritzBox/6591cable/firmware/7.22/International/Image/$File722i
 
@@ -164,7 +164,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, firmware selection (S
           echo -e "${ColorGreen}Downloading uimg-tool source code...${ColorEnd}"
           echo ""
           rm -rf  /root/SourceCode/uimg-tool/ > /dev/null
-          mkdir   /root/SourceCode/ > /dev/null
+          mkdir   /root/SourceCode/ 2> /dev/null
           cd      /root/SourceCode/
           git clone --depth=1 http://bitbucket.org/fesc2000/uimg-tool/
 
@@ -177,7 +177,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, firmware selection (S
           echo ""
           echo -e "${ColorGreen}Extracting .bin files from .uimg file...${ColorEnd}"
           echo ""
-          mkdir /root/FritzBox/6591cable/firmware/7.22/International/ImageExtractedBINs/ > /dev/null
+          mkdir /root/FritzBox/6591cable/firmware/7.22/International/ImageExtractedBINs/ 2> /dev/null
           cd /root/FritzBox/6591cable/firmware/7.22/International/ImageExtractedBINs/
           /root/SourceCode/uimg-tool/uimg -u -n part /root/FritzBox/6591cable/firmware/7.22/International/ImageExtracted/var/firmware-update.uimg > /root/FritzBox/6591cable/firmware/7.22/International/ImageExtractedBINs/Extraction.log
           echo ""
@@ -196,7 +196,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, firmware selection (S
           echo ""
           echo -e "${ColorGreen}Moving files to windows folders...${ColorEnd}"
           echo ""
-          mkdir -p /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-International/ > /dev/null
+          mkdir -p /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-International/ 2> /dev/null
           mv /root/FritzBox/6591cable/firmware/7.22/International/ImageExtractedBINs/mtd0-Atom-RootFileSystem.bin /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-International/mtd0.bin
           mv /root/FritzBox/6591cable/firmware/7.22/International/ImageExtractedBINs/mtd1-Atom-Kernel.bin         /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-International/mtd1.bin
           mv /root/FritzBox/6591cable/firmware/7.22/International/ImageExtractedBINs/mtd6-ARM-RootFileSystem.bin  /mnt/c/FritzBox/6591cable/BinsToFlash/7.22-International/mtd6.bin
