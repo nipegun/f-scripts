@@ -21,7 +21,7 @@ ColorGreen='\033[1;32m'
 ColorEnd='\033[0m'
 
 apt-get -y update > /dev/null
-apt-get -y install dialog > /dev/null
+apt-get -y install dialog git > /dev/null
 
 menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware selection (SpaceBar to mark, Enter to proceed):" 22 86 16)
   options=(1 "7.23 Deustchland" off
