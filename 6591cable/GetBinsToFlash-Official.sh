@@ -53,14 +53,14 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, firmware selection (S
           echo -e "${ColorGreen}Downloading the firmware update image file...${ColorEnd}"
           echo ""
           rm -rf /root/FritzBox/6591cable/firmware/7.22/Deustchland/Image/
-          mkdir -p /root/FritzBox/6591cable/firmware/7.22/Deustchland/Image/ > /dev/null
+          mkdir -p /root/FritzBox/6591cable/firmware/7.22/Deustchland/Image/ 2> /dev/null
           cd /root/FritzBox/6591cable/firmware/7.22/Deustchland/Image/
           wget --no-check-certificate $URL722d$File722d
 
           echo ""
           echo -e "${ColorGreen}Extracting the image file...${ColorEnd}"
           echo ""
-          mkdir -p /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtracted/ > /dev/null
+          mkdir -p /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtracted/ 2> /dev/null
           cd /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtracted/
           tar xf /root/FritzBox/6591cable/firmware/7.22/Deustchland/Image/$File722d
 
@@ -68,7 +68,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, firmware selection (S
           echo -e "${ColorGreen}Downloading uimg-tool source code...${ColorEnd}"
           echo ""
           rm -rf  /root/SourceCode/uimg-tool/ > /dev/null
-          mkdir   /root/SourceCode/ > /dev/null
+          mkdir   /root/SourceCode/ 2> /dev/null
           cd      /root/SourceCode/
           git clone --depth=1 http://bitbucket.org/fesc2000/uimg-tool/
 
@@ -81,7 +81,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, firmware selection (S
           echo ""
           echo -e "${ColorGreen}Extracting .bin files from .uimg file...${ColorEnd}"
           echo ""
-          mkdir /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtractedBINs/ > /dev/null
+          mkdir /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtractedBINs/ 2> /dev/null
           cd /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtractedBINs/
           /root/SourceCode/uimg-tool/uimg -u -n part /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtracted/var/firmware-update.uimg > /root/FritzBox/6591cable/firmware/7.22/Deustchland/ImageExtractedBINs/Extraction.log
           echo ""
