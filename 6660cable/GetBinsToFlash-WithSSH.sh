@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script is given to the word under the concept of "Public domain software".
+# This script is given to the world under the concept of "public domain software".
 # You can do whatever you want with it because is "really free",
 # not "free with terms and conditions", like GNU license and other similar crap.
 # If you talk all day about freedom, show it and make your code "really free".
