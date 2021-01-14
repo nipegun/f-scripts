@@ -28,6 +28,20 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, SSH injection (SpaceB
         1)
 
           echo ""
+          echo -e "${ColorGreen}Downloading uimg-tool source code...${ColorEnd}"
+          echo ""
+          rm -rf  /root/SourceCode/uimg-tool/ > /dev/null
+          mkdir   /root/SourceCode/ > /dev/null
+          cd      /root/SourceCode/
+          git clone --depth=1 http://bitbucket.org/fesc2000/uimg-tool/
+
+          echo ""
+          echo -e "${ColorGreen}Compiling uimg-tool...${ColorEnd}"
+          echo ""
+          cd /root/SourceCode/uimg-tool/
+          make
+
+          echo ""
           echo -e "${ColorGreen}Downloading ffritz source code...${ColorEnd}"
           echo ""
           rm -rf  /root/SourceCode/ffritz/ > /dev/null
@@ -85,6 +99,21 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, SSH injection (SpaceB
         ;;
 
         2)
+
+          echo ""
+          echo -e "${ColorGreen}Downloading uimg-tool source code...${ColorEnd}"
+          echo ""
+          rm -rf  /root/SourceCode/uimg-tool/ > /dev/null
+          mkdir   /root/SourceCode/ > /dev/null
+          cd      /root/SourceCode/
+          git clone --depth=1 http://bitbucket.org/fesc2000/uimg-tool/
+
+          echo ""
+          echo -e "${ColorGreen}Compiling uimg-tool...${ColorEnd}"
+          echo ""
+          cd /root/SourceCode/uimg-tool/
+          make
+
           echo ""
           echo -e "${ColorGreen}Downloading ffritz source code...${ColorEnd}"
           echo ""
