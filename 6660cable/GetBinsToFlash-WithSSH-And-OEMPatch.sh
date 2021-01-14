@@ -43,13 +43,13 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, SSH injection (SpaceB
           echo "KEEP_ORIG = 1" >> /root/SourceCode/ffritz/conf.mk
           echo "SDK_DOWNLOAD=1" >> /root/SourceCode/ffritz/conf.mk
           cd /root/SourceCode/ffritz/
-          
-          echo ""
-          echo -e "${ColorGreen}Applying OEM Patch...${ColorEnd}"
-          echo ""
+
+          # OEM Patch
+          # ----------------------------------------------------------------------------
           cp /root/SourceCode/ffritz/user-oem.patch /root/SourceCode/ffritz/puma7/arm/
           cp /root/SourceCode/ffritz/user-oem.patch /root/SourceCode/ffritz/puma7/atom/
-          
+          # ----------------------------------------------------------------------------
+
           make
           ModImage=$(find /root/SourceCode/ffritz/images/ -type f -name *.tar)
           mkdir /root/SourceCode/ffritz/images/UBinWithSSH-And-OEMPatch/ > /dev/null
@@ -108,13 +108,13 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, SSH injection (SpaceB
           echo "KEEP_ORIG = 1" >> /root/SourceCode/ffritz/conf.mk
           echo "SDK_DOWNLOAD=1" >> /root/SourceCode/ffritz/conf.mk
           cd /root/SourceCode/ffritz/
-          
-          echo ""
-          echo -e "${ColorGreen}Applying OEM Patch...${ColorEnd}"
-          echo ""
+
+          # OEM Patch
+          # ----------------------------------------------------------------------------
           cp /root/SourceCode/ffritz/user-oem.patch /root/SourceCode/ffritz/puma7/arm/
           cp /root/SourceCode/ffritz/user-oem.patch /root/SourceCode/ffritz/puma7/atom/
-          
+          # ----------------------------------------------------------------------------
+
           make
           ModImage=$(find /root/SourceCode/ffritz/images/ -type f -name *.tar)
           mkdir /root/SourceCode/ffritz/images/UBinWithSSH-And-OEMPatch/ > /dev/null
