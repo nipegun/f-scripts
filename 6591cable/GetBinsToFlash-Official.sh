@@ -20,6 +20,10 @@ ColorRed='\033[1;31m'
 ColorGreen='\033[1;32m'
 ColorEnd='\033[0m'
 
+echo ""
+echo -e "${ColorGreen}Starting script...${ColorEnd}"
+echo ""
+
 apt-get -y update > /dev/null
 apt-get -y install dialog > /dev/null
 
