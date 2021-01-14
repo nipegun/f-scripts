@@ -104,7 +104,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, SSH injection (SpaceB
           echo -e "${ColorGreen}Downloading uimg-tool source code...${ColorEnd}"
           echo ""
           rm -rf  /root/SourceCode/uimg-tool/ > /dev/null
-          mkdir   /root/SourceCode/ > /dev/null
+          mkdir   /root/SourceCode/ 2> /dev/null
           cd      /root/SourceCode/
           git clone --depth=1 http://bitbucket.org/fesc2000/uimg-tool/
 
@@ -132,9 +132,9 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, SSH injection (SpaceB
           cd /root/SourceCode/ffritz/
           make
           ModImage=$(find /root/SourceCode/ffritz/images/ -type f -name *.tar)
-          mkdir /root/SourceCode/ffritz/images/UBinWithSSH/ > /dev/null
+          mkdir /root/SourceCode/ffritz/images/UBinWithSSH/ 2> /dev/null
           tar -C /root/SourceCode/ffritz/images/UBinWithSSH/ -xvf $ModImage
-          mkdir /root/SourceCode/ffritz/images/BinsWithSSH/ > /dev/null
+          mkdir /root/SourceCode/ffritz/images/BinsWithSSH/ 2> /dev/null
           cd /root/SourceCode/ffritz/images/BinsWithSSH/
           /root/SourceCode/uimg-tool/uimg -u -n part /root/SourceCode/ffritz/images/UBinWithSSH/var/firmware-update.uimg > /root/SourceCode/ffritz/images/BinsWithSSH/Extraction.log
           mv /root/SourceCode/ffritz/images/BinsWithSSH/part_03_ATOM_ROOTFS.bin /root/SourceCode/ffritz/images/BinsWithSSH/mtd0-Atom-RootFileSystem.bin
@@ -145,7 +145,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, SSH injection (SpaceB
           echo ""
           echo -e "${ColorGreen}Moving files to windows folders...${ColorEnd}"
           echo ""
-          mkdir -p /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International-WithSSH/ > /dev/null
+          mkdir -p /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International-WithSSH/ 2> /dev/null
           mv /root/SourceCode/ffritz/images/BinsWithSSH/mtd0-Atom-RootFileSystem.bin /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International-WithSSH/mtd0.bin
           mv /root/SourceCode/ffritz/images/BinsWithSSH/mtd1-Atom-Kernel.bin         /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International-WithSSH/mtd1.bin
           mv /root/SourceCode/ffritz/images/BinsWithSSH/mtd6-ARM-RootFileSystem.bin  /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International-WithSSH/mtd6.bin
