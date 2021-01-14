@@ -13,7 +13,7 @@ ColorGreen='\033[1;32m'
 ColorEnd='\033[0m'
 
 apt-get -y update > /dev/null
-apt-get -y install dialog rsync squashfs-tools > /dev/null
+apt-get -y install dialog wget git rsync squashfs-tools build-essential > /dev/null
 
 menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, SSH injection (SpaceBar to mark, Enter to proceed):" 22 86 16)
   options=(1 "Get Bins to flash 7.22 Firmware with SSH, Deustchland version" off
