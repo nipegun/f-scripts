@@ -57,7 +57,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6591 cable, SSH injection (SpaceB
           echo ""
           echo -e "${ColorGreen}Compiling...${ColorEnd}"
           echo ""
-          echo "http://download.avm.de/firmware/6591/8548751392/FRITZ.Box_6591_Cable-07.22.image" > /root/SourceCode/ffritz/conf.mk
+          echo "URL=http://download.avm.de/firmware/6591/8548751392/FRITZ.Box_6591_Cable-07.22.image" > /root/SourceCode/ffritz/conf.mk
           echo "KEEP_ORIG = 1" >> /root/SourceCode/ffritz/conf.mk
           echo "SDK_DOWNLOAD=1" >> /root/SourceCode/ffritz/conf.mk
           cd /root/SourceCode/ffritz/
