@@ -100,7 +100,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, firmware selection (S
           echo ""
           echo -e "${ColorGreen}Moving files to windows folders...${ColorEnd}"
           echo ""
-          mkdir -p /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-Deustchland/ > /dev/null
+          mkdir -p /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-Deustchland/ 2> /dev/null
           mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd0-Atom-RootFileSystem.bin /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-Deustchland/mtd0.bin
           mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd1-Atom-Kernel.bin         /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-Deustchland/mtd1.bin
           mv /root/FritzBox/6660cable/firmware/7.23/Deustchland/ImageExtractedBINs/mtd6-ARM-RootFileSystem.bin  /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-Deustchland/mtd6.bin
