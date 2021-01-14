@@ -111,7 +111,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, SSH injection (SpaceB
           echo -e "${ColorGreen}Downloading uimg-tool source code...${ColorEnd}"
           echo ""
           rm -rf  /root/SourceCode/uimg-tool/ > /dev/null
-          mkdir   /root/SourceCode/ > /dev/null
+          mkdir   /root/SourceCode/ 2> /dev/null
           cd      /root/SourceCode/
           git clone --depth=1 http://bitbucket.org/fesc2000/uimg-tool/
 
@@ -146,9 +146,9 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, SSH injection (SpaceB
 
           make
           ModImage=$(find /root/SourceCode/ffritz/images/ -type f -name *.tar)
-          mkdir /root/SourceCode/ffritz/images/UBinWithSSH-And-OEMPatch/ > /dev/null
+          mkdir /root/SourceCode/ffritz/images/UBinWithSSH-And-OEMPatch/ 2> /dev/null
           tar -C /root/SourceCode/ffritz/images/UBinWithSSH-And-OEMPatch/ -xvf $ModImage
-          mkdir /root/SourceCode/ffritz/images/BinsWithSSH-And-OEMPatch/ > /dev/null
+          mkdir /root/SourceCode/ffritz/images/BinsWithSSH-And-OEMPatch/ 2> /dev/null
           cd /root/SourceCode/ffritz/images/BinsWithSSH-And-OEMPatch/
           /root/SourceCode/uimg-tool/uimg -u -n part /root/SourceCode/ffritz/images/UBinWithSSH-And-OEMPatch/var/firmware-update.uimg > /root/SourceCode/ffritz/images/BinsWithSSH-And-OEMPatch/Extraction.log
           mv /root/SourceCode/ffritz/images/BinsWithSSH-And-OEMPatch/part_03_ATOM_ROOTFS.bin /root/SourceCode/ffritz/images/BinsWithSSH-And-OEMPatch/mtd0-Atom-RootFileSystem.bin
@@ -159,7 +159,7 @@ menu=(dialog --timeout 5 --checklist "FritzBox 6660 cable, SSH injection (SpaceB
           echo ""
           echo -e "${ColorGreen}Moving files to windows folders...${ColorEnd}"
           echo ""
-          mkdir -p /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International-WithSSH-And-OEMPatch/ > /dev/null
+          mkdir -p /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International-WithSSH-And-OEMPatch/ 2> /dev/null
           mv /root/SourceCode/ffritz/images/BinsWithSSH-And-OEMPatch/mtd0-Atom-RootFileSystem.bin /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International-WithSSH-And-OEMPatch/mtd0.bin
           mv /root/SourceCode/ffritz/images/BinsWithSSH-And-OEMPatch/mtd1-Atom-Kernel.bin         /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International-WithSSH-And-OEMPatch/mtd1.bin
           mv /root/SourceCode/ffritz/images/BinsWithSSH-And-OEMPatch/mtd6-ARM-RootFileSystem.bin  /mnt/c/FritzBox/6660cable/BinsToFlash/7.23-International-WithSSH-And-OEMPatch/mtd6.bin
