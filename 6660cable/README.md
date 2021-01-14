@@ -8,7 +8,7 @@ Run this script as root inside the terminal of a Debian distro available in the 
 
 ## GetBinsToFlash-WithSSH-And-OEMPatch.sh
 Run this script as root inside the terminal of a Debian distro available in the Windows 10 store and all files to flash the official firmware (injected with SSH + telnet) will be available in c:\FritzBox.
-This particular script allows to install a retail firmware on a branded box
+Plus, this OEMPatch script allows to install a retail firmware on a branded box.
 
-This work is possible thanks to Félix ( https://bitbucket.org/fesc2000/ )
+These scripts weren't possible whithout the help of Félix. Check his work here: https://bitbucket.org/fesc2000/
 
