@@ -1,4 +1,4 @@
-# General purpose tools (Valid for all models)
+# General purpose tools (valid for all models)
 
 ## EVA-Discover.ps1
 
