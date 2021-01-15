@@ -6,7 +6,7 @@ Write-Output ""
 EVA-FTP-Client.ps1 -Verbose -ScriptBlock { GetEnvironmentValue DMC }
 
 Write-Output ""
-Write-Output "Setting value to Retail (RTL=y):"
+Write-Output "Setting value to Retailer (RTL=y):"
 Write-Output ""
 EVA-FTP-Client.ps1 -Verbose -ScriptBlock { SetEnvironmentValue DMC RTL=y}
 
